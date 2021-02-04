@@ -1,7 +1,6 @@
 package navidad01;
 
-import java.util.Scanner;
-import java.lang.Math;
+
 
 /**
  *
@@ -13,8 +12,9 @@ public class Navidad01 {
 	 * @param args the command line arguments
 	 */
 	public static void main(String[] args) {
-
-		Imc tuimc = new Imc(nombreEntrada, pesoEntrada, alturaEntrada);
+		// tuimc es el objeto de la clase Imc
+		Imc tuimc = new Imc();
+		tuimc.pideDatos();
 		System.out.print("Tu IMC es: " + tuimc.redondeo(tuimc.calculaimc()) + " || ");
 		System.out.println(tuimc.dx());
 

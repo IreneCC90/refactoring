@@ -1,52 +1,65 @@
 package navidad01;
 
 import java.util.Scanner;
+import java.lang.Math;
 
 /**
  *
  * @author cheir
  */
 public class Imc {
+	// objeto tipo String nombre
 	private String nombre;
+	// objeto tipo double peso
 	private double peso;
+	// objeto tipo double altura
 	private double altura;
 
-	Imc(String nombre, double peso, double altura) {// constructor param
+	// constructor param
+	Imc(String nombre, double peso, double altura) {
 		this.nombre = nombre;
 		this.peso = peso;
 		this.altura = altura;
 	}
 
+	// constructor por defecto
 	Imc() {
 		nombre = "Jane Doe";
 		peso = 20.0;
 		altura = 1.60;
 	}
-
+	// método público setter
+	// variable de entrada tipo double
 	public void setPeso(double peso) {
 		this.peso = peso;
 	}
-
+	// método público setter
+	// variable de entrada tipo double
 	public void setAltura(double altura) {
 		this.altura = altura;
 	}
-
+	/* método público getter
+	@return String */
 	public String getNombre() {
 		return nombre;
 	}
-
+	/* método público getter
+	@return double */
 	public double getPeso() {
 		return peso;
 	}
-
+	/* método público getter
+	@return double */
 	public double getAltura() {
 		return altura;
 	}
-
+	/* método público calculaimc
+	@return double */
 	public double calculaimc() {
 		return peso / (altura * altura);
 	}
-
+	/* método público String dx
+	@return String */
 	public String dx() {
 		double imc = calculaimc();
 		String mensaje = "";
@@ -71,7 +84,7 @@ public class Imc {
 		}
 		return mensaje;
 	}
-
+	// método public return void
 	public void pideDatos() {
 		String nombreEntrada = "";
 		double pesoEntrada;
@@ -84,9 +97,12 @@ public class Imc {
 		pesoEntrada = entrada.nextDouble();
 		System.out.println("Introduce tu altura: ");
 		alturaEntrada = entrada.nextDouble();
+		this.nombre = nombreEntrada;
+		this.peso = pesoEntrada;
+		this.altura = alturaEntrada;
 	}
-
-	public static double redondeo(double redon) {
+	// método public return double
+	public double redondeo(double redon) {
 		return (double) Math.round(redon * 100d) / 100d;
 	}
 }
